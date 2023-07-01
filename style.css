@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;0,900;1,600&family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&display=swap');
+
+
+:root{
+    --soft-red:hsl(7, 99%, 70%);
+    --yellow:hsl(51, 100%, 49%);
+    --dark-desaturated-cyan:hsl(167, 40%, 24%);
+    --dark-blue:hsl(198, 62%, 26%);
+    --dark-moderate-cyan:hsl(168, 34%, 41%);
+    --very-dark-desaturated-blue:hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue:hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white:hsl(0, 0%, 100%);
+    --padding-value:50px;
+    --padding-mobile-value:15px;
+    --margin-value:60px;
+    --margin-mobile-value:15px;
+    --gap-value:35px;
+}
+
+body{
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+}
+
+
+/* The hero section */
+
+.hero{
+    height: 550px;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: var(--padding-mobile-value-value);
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-mobile-value);
+}
+
+header>h1{
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 900;
+}
+
+.hamburger-icon:hover,.hamburger-icon.active{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    gap: var(--gap-value);
+    font-size: 20px;
+    align-items: center;
+}
+
+.menu>li{
+    cursor: pointer;
+}
+
+.hamburger-icon.active+.menu.mobile{display: flex;}
+
+.menu.mobile{
+    position: absolute;
+    bottom: -520%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    width: calc(100% - var(--padding-mobile-value)*2);
+    padding: 35px 0;
+    color: var(--dark-grayish-blue);
+    background-color: var(--white);
+    display: none;
+}
+
+.contact{
+    padding: 15px 25px;
+    background-color: var(--yellow);
+    color: var(--very-dark-desaturated-blue);
+    font-family: 'Fraunces', sans-serif;
+    border-radius: 64px;
+}
+
+.triangle{
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid white;
+    border-bottom: 15px solid white;
+    border-top: 15px solid transparent;
+}
+
+.hero>.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.slogan{
+    font-size: 40px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family:'Fraunces', sans-serif;
+}
+
+
+/* The transform and stand out section */
+.imgandcontent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.imgandcontent.transform{
+    flex-wrap: wrap-reverse;
+}
+
+.img{
+    position: relative;
+}
+
+.imgandcontent>*{
+    flex: 1 1 275px;
+}
+
+.imgandcontent>.content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-value);
+    color: var(--grayish-blue);
+    text-align: center;
+    width: 50%;
+}
+
+.imgandcontent .content{padding: 40px var(--padding-mobile-value);}
+
+.imgandcontent .content *:not(:first-child){margin-top: 20px;}
+
+.imgandcontent .content>h1{
+    color: var(--very-dark-desaturated-blue);
+    font-size: 35px;
+    font-family: 'Fraunces', sans-serif;
+}
+
+.imgandcontent .content>a{
+    display: inline-block;
+    font-size: 20px;
+    color: var(--very-dark-desaturated-blue);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Fraunces', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.imgandcontent .content>a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: -5%;
+    width: 110%;
+    height: 8px;
+    border-radius: 16px;
+    opacity: 0.4;
+    transition-duration: 200ms;
+    z-index: -1;
+}
+
+.imgandcontent .content>a:hover:after{
+    opacity: 1;
+}
+
+
+.imgandcontent .content.transform>a::after{
+    background-color: var(--yellow);
+}
+
+.imgandcontent .content.stand-out>a::after{
+    background-color: var(--soft-red);
+}
+
+/* The graphic and photography section */
+
+.section3{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section3>.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    gap: 25px;
+    align-items: center;
+    flex: 1 1 275px;
+    text-align: center;
+}
+
+.section3>.content>.contenttext{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    bottom: 40px;
+}
+
+.section3>.content>picture{
+    width: 100%;
+    height: 100%;
+}
+
+.section3>.content>.contenttext>h2{
+    font-family: 'Fraunces', sans-serif;
+    font-size: 28px;
+}
+
+.section3>.content.graphic>h2{color: var(--dark-desaturated-cyan);}
+
+.section3>.content.graphic{color: var(--dark-moderate-cyan);}
+
+.section3>.content.photography>h2{color: var(--very-dark-desaturated-blue);}
+
+.section3>.content.photography{color: var(--dark-blue);}
+
+
+/* The testimonials section */
+
+.testimonials{
+    padding: 40px var(--padding-mobile-value);
+    text-align: center;
+}
+
+.testimonials>h2{
+    font-size: 20px;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Fraunces', sans-serif;
+}
+
+.testimonials-cards{
+    margin: auto;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-value);
+    flex-wrap: wrap;
+}
+
+.testimonials-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-value);
+    flex: 1 1 275px;
+    max-width: 350px;
+}
+
+.testimonials-card>img{
+    border-radius: 100%;
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.testimonials-card{
+    color: var(--very-dark-grayish-blue);
+}
+
+.testimonials-card>.name-title>h4{
+    font-size: 20px;
+    color: var(--very-dark-desaturated-blue);
+    font-family: 'Fraunces', sans-serif;
+}
+
+.testimonials-card>.name-title>h5{color: var(--dark-grayish-blue);}
+
+/* The gallery section */
+
+.image-gallery,.image-gallery>div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-gallery>div{flex: 1 1 550px;}
+
+.image-gallery>div>*{flex: 1;}
+
+
+/* The footer section */
+
+footer{
+    padding: 40px var(--padding-mobile-value);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--dark-moderate-cyan);
+    color: var(--dark-desaturated-cyan);
+}
+
+footer>h1{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+footer>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+footer>ul>li{cursor: pointer;}
+
+.footer-li>li:hover{color: var(--white);}
+
+.footer-icons>li>svg{fill: var(--dark-desaturated-cyan);}
+
+.footer-icons>li>svg:hover{fill: var(--white);}
+
+/* Utilities */
+
+
+
+.desktop{
+    display: none;
+}
+
+.picture-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+picture>img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width:750px) {
+
+    /* The hero section */
+
+    .hero{
+        height: 650px;
+    }
+
+    header{
+        padding: var(--padding-value);
+    }
+
+    .menu.desktop{
+        flex-direction: row;
+        color: white;
+    }
+
+    .contact:hover{
+        color:white;
+        background-color: hsla(0, 0%, 100%, 0.4);
+    }
+
+    /* The transform and stand out section */
+
+    .img{max-height: 100%;}
+
+    .imgandcontent>.content-container{text-align: left;}
+
+    .imgandcontent .content>h1{font-size: 45px;}
+
+    .imgandcontent .content{padding: 40px 90px;}
+
+    .imgandcontent .content *:not(:first-child){margin-top: 30px;}
+
+
+    /* The testimonials section */
+
+    .testimonials{padding: 150px var(--padding-value);}
+
+    /* Utilities */
+
+    .desktop{
+    display: flex;
+    }
+
+    .mobile{
+    display: none;
+    }
+
+    
+
+}
+
+@media screen and (min-width:950px){
+    /* The graphic and photography section */
+
+    .section3>.content>.contenttext{width: 60%;}
+}
